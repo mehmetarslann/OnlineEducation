@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlineEgitimModelStoreContainer" CdmEntityContainer="OnlineEgitimEntities1">
+    <EntitySetMapping Name="Egitmenler">
+      <EntityTypeMapping TypeName="OnlineEgitimModel.Egitmenler">
+        <MappingFragment StoreEntitySet="Egitmenler">
+          <ScalarProperty Name="egt_id" ColumnName="egt_id" />
+          <ScalarProperty Name="egt_ad" ColumnName="egt_ad" />
+          <ScalarProperty Name="egt_soyad" ColumnName="egt_soyad" />
+          <ScalarProperty Name="egt_eposta" ColumnName="egt_eposta" />
+          <ScalarProperty Name="egt_sifre" ColumnName="egt_sifre" />
+          <ScalarProperty Name="egt_tel" ColumnName="egt_tel" />
+          <ScalarProperty Name="egt_puan" ColumnName="egt_puan" />
+          <ScalarProperty Name="egt_video" ColumnName="egt_video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategoriler">
+      <EntityTypeMapping TypeName="OnlineEgitimModel.Kategoriler">
+        <MappingFragment StoreEntitySet="Kategoriler">
+          <ScalarProperty Name="kat_id" ColumnName="kat_id" />
+          <ScalarProperty Name="kat_ad" ColumnName="kat_ad" />
+          <ScalarProperty Name="kat_resim" ColumnName="kat_resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogrenciler">
+      <EntityTypeMapping TypeName="OnlineEgitimModel.Ogrenciler">
+        <MappingFragment StoreEntitySet="Ogrenciler">
+          <ScalarProperty Name="ogr_id" ColumnName="ogr_id" />
+          <ScalarProperty Name="ogr_ad" ColumnName="ogr_ad" />
+          <ScalarProperty Name="ogr_soyad" ColumnName="ogr_soyad" />
+          <ScalarProperty Name="ogr_eposta" ColumnName="ogr_eposta" />
+          <ScalarProperty Name="ogr_sifre" ColumnName="ogr_sifre" />
+          <ScalarProperty Name="ogr_tel" ColumnName="ogr_tel" />
+          <ScalarProperty Name="ogr_video" ColumnName="ogr_video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Puanlar">
+      <EntityTypeMapping TypeName="OnlineEgitimModel.Puanlar">
+        <MappingFragment StoreEntitySet="Puanlar">
+          <ScalarProperty Name="puan_id" ColumnName="puan_id" />
+          <ScalarProperty Name="puan" ColumnName="puan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sepet">
+      <EntityTypeMapping TypeName="OnlineEgitimModel.Sepet">
+        <MappingFragment StoreEntitySet="Sepet">
+          <ScalarProperty Name="sepet_id" ColumnName="sepet_id" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="video_id" ColumnName="video_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siparis">
+      <EntityTypeMapping TypeName="OnlineEgitimModel.Siparis">
+        <MappingFragment StoreEntitySet="Siparis">
+          <ScalarProperty Name="SiparisId" ColumnName="SiparisId" />
+          <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+          <ScalarProperty Name="EgitmenId" ColumnName="EgitmenId" />
+          <ScalarProperty Name="SiparisTarih" ColumnName="SiparisTarih" />
+          <ScalarProperty Name="video_id" ColumnName="video_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="OnlineEgitimModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Videolar">
+      <EntityTypeMapping TypeName="OnlineEgitimModel.Videolar">
+        <MappingFragment StoreEntitySet="Videolar">
+          <ScalarProperty Name="vid_id" ColumnName="vid_id" />
+          <ScalarProperty Name="vid_ad" ColumnName="vid_ad" />
+          <ScalarProperty Name="vid_link" ColumnName="vid_link" />
+          <ScalarProperty Name="kat_ad" ColumnName="kat_ad" />
+          <ScalarProperty Name="vid_puan" ColumnName="vid_puan" />
+          <ScalarProperty Name="egt_id" ColumnName="egt_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

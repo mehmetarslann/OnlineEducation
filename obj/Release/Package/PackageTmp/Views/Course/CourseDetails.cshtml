@@ -1,0 +1,73 @@
+﻿@model List<OnlineEgitimProjesi.Models.Videolar>
+@{
+    ViewBag.Title = "CourseDetails";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+@foreach (var item in Model)
+{
+
+    <!-- single course section -->
+    <section class="single-course spad pb-0">
+        <div class="container">
+            <div class="course-meta-area">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="course-note">Öne Çıkan Kurs</div>
+                        <h3>@item.vid_ad</h3>
+                        <div>
+                            <iframe width="560" height="315" src="@item.vid_link" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="course-metas">
+                            <div class="course-meta">
+                                <div class="course-author">
+                                    <div class="ca-pic set-bg" data-setbg="img/authors/2.jpg"></div>
+                                    <h6>Eğitmen</h6>
+                                    <p>@item.Egitmenler1.egt_ad @item.Egitmenler1.egt_soyad , <span>@item.Egitmenler1.egt_eposta</span></p>
+                                </div>
+                            </div>
+                            <div class="course-meta">
+                                <div class="cm-info">
+                                    <h6>Kategori</h6>
+                                    <p>@item.Kategoriler.kat_ad</p>
+                                </div>
+                            </div>
+                            <div class="course-meta">
+                                <div class="cm-info">
+                                    <h6>Öğrenci</h6>
+                                    <p>+100 Öğrenci Kayıtlı</p>
+                                </div>
+                            </div>
+                            <div class="course-meta">
+                                <div class="cm-info">
+                                    <h6>Değerlendirme</h6>
+                                    <p>
+                                        4 Yıldız <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star is-fade"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="site-btn price-btn">Fiyat: ₺15</a>
+                        <a href="~/Basket/BasketDetails/@item.vid_id" class="site-btn buy-btn">Kursu Satın Al</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+    <!-- single course section end -->

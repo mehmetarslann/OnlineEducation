@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OnlineEgitimProjesi.Models.Videolar>
+
+@{
+    ViewBag.Title = "CourseList";
+    Layout = "~/Views/Shared/_EgitmenLayout.cshtml";
+}
+
+<h2>Kurs Listesi</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+           Eğitim Adı
+        </th>
+        <th>
+            Eğitim Linki
+        </th>
+        <th>
+            Eğitmen Adı
+        </th>
+        <th>
+            Kategori
+        </th>
+        <th>
+            Puan
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.vid_id
+        </td>
+        <td>
+            @item.vid_ad
+        </td>
+        <td>
+            @item.vid_link
+        </td>
+        <td>
+            @item.Egitmenler1.egt_ad
+        </td>
+        <td>
+            @item.Kategoriler.kat_ad
+        </td>
+        <td>
+            @item.Puanlar.puan
+        </td>
+    </tr>
+}
+
+</table>

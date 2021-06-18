@@ -1,0 +1,52 @@
+﻿@model IEnumerable<OnlineEgitimProjesi.Models.Egitmenler>
+
+<table class="table">
+    <tr>
+        <th>
+            Eğitmen Adı
+        </th>
+        <th>
+            Eğitmen Soyadı
+        </th>
+        <th>
+            Eğitmen Eposta
+        </th>
+        <th>
+            Eğitmen Telefon
+        </th>
+        <th>
+            Puan
+        </th>
+        <th>
+            Kurs Adı
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.egt_ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.egt_soyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.egt_eposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.egt_sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.egt_tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puanlar.puan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Videolar.vid_ad)
+        </td>
+    </tr>
+}
+
+</table>

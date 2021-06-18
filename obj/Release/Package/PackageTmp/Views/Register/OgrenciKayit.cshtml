@@ -1,0 +1,69 @@
+﻿@model OnlineEgitimProjesi.Models.Ogrenciler
+
+@{
+    ViewBag.Title = "OgrenciKayit";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2>Ogrenci Kayit</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            Ad
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ogr_ad, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ogr_ad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Soyad
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ogr_soyad, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ogr_soyad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Eposta
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ogr_eposta, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ogr_eposta, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Şifre
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ogr_sifre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ogr_sifre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Telefon
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ogr_tel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ogr_tel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Hesap Oluştur" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

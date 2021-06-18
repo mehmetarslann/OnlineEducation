@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "EgitmenDashboard";
+    Layout = "~/Views/Shared/_EgitmenLayout.cshtml";
+}
+
+
+<!-- 4-blocks row start -->
+<div class="row dashboard-header">
+    <div class="col-lg-3 col-md-6">
+        <div class="card dashboard-product">
+            <span>Eğitmen Sayısı</span>
+            <h2 class="dashboard-total-products">5</h2>
+
+            <div class="side-box">
+                <i class="ti-signal text-warning-color"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card dashboard-product">
+            <span>Öğrenci Sayısı</span>
+            <h2 class="dashboard-total-products">100</h2>
+
+            <div class="side-box ">
+                <i class="ti-gift text-primary-color"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card dashboard-product">
+            <span>Kurs Sayısı</span>
+            <h2 class="dashboard-total-products">18<span> Adet</span></h2>
+
+            <div class="side-box">
+                <i class="ti-direction-alt text-success-color"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card dashboard-product">
+            <span>Toplam Tutar</span>
+            <h2 class="dashboard-total-products">₺<span>3200</span></h2>
+
+            <div class="side-box">
+                <i class="ti-rocket text-danger-color"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 4-blocks row end -->
+
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-chart-pie mr-1"></i>
+        Eğitmenler
+    </div>
+    @Html.Action("EgitmenPartial", "PartialView")
+    <div class="card-footer small text-muted">Güncellenme Tarihi @DateTime.Now</div>
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-chart-pie mr-1"></i>
+        Öğrenciler
+    </div>
+    @Html.Action("StudentPartial", "PartialView")
+    <div class="card-footer small text-muted">Güncellenme Tarihi @DateTime.Now</div>
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-chart-pie mr-1"></i>
+        Kurslar
+    </div>
+    @Html.Action("CoursePartial", "PartialView")
+    <div class="card-footer small text-muted">Güncellenme Tarihi @DateTime.Now</div>
+</div>

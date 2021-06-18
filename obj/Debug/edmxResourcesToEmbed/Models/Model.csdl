@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineEgitimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Egitmenler">
+    <Key>
+      <PropertyRef Name="egt_id" />
+    </Key>
+    <Property Name="egt_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="egt_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="egt_soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="egt_eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="egt_sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="egt_tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="egt_puan" Type="Int32" />
+    <Property Name="egt_video" Type="Int32" />
+    <NavigationProperty Name="Puanlar" Relationship="Self.FK_Egitmenler_Puanlar" FromRole="Egitmenler" ToRole="Puanlar" />
+    <NavigationProperty Name="Videolar" Relationship="Self.FK_Egitmenler_Videolar" FromRole="Egitmenler" ToRole="Videolar" />
+    <NavigationProperty Name="Siparis" Relationship="Self.FK_Siparis_Egitmenler" FromRole="Egitmenler" ToRole="Siparis" />
+    <NavigationProperty Name="Videolar1" Relationship="Self.FK_Videolar_Egitmenler" FromRole="Egitmenler" ToRole="Videolar" />
+  </EntityType>
+  <EntityType Name="Kategoriler">
+    <Key>
+      <PropertyRef Name="kat_id" />
+    </Key>
+    <Property Name="kat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kat_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kat_resim" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Videolar" Relationship="Self.FK_Videolar_Kategoriler" FromRole="Kategoriler" ToRole="Videolar" />
+  </EntityType>
+  <EntityType Name="Ogrenciler">
+    <Key>
+      <PropertyRef Name="ogr_id" />
+    </Key>
+    <Property Name="ogr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogr_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ogr_soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ogr_eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ogr_sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ogr_tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ogr_video" Type="Int32" />
+    <NavigationProperty Name="Videolar" Relationship="Self.FK_Ogrenciler_Videolar1" FromRole="Ogrenciler" ToRole="Videolar" />
+    <NavigationProperty Name="Siparis" Relationship="Self.FK_Siparis_Ogrenciler" FromRole="Ogrenciler" ToRole="Siparis" />
+  </EntityType>
+  <EntityType Name="Puanlar">
+    <Key>
+      <PropertyRef Name="puan_id" />
+    </Key>
+    <Property Name="puan_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="puan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Egitmenler" Relationship="Self.FK_Egitmenler_Puanlar" FromRole="Puanlar" ToRole="Egitmenler" />
+    <NavigationProperty Name="Videolar" Relationship="Self.FK_Videolar_Puanlar" FromRole="Puanlar" ToRole="Videolar" />
+  </EntityType>
+  <EntityType Name="Sepet">
+    <Key>
+      <PropertyRef Name="sepet_id" />
+    </Key>
+    <Property Name="sepet_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fiyat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="video_id" Type="Int32" />
+    <NavigationProperty Name="Videolar" Relationship="Self.FK_Sepet_Videolar" FromRole="Sepet" ToRole="Videolar" />
+  </EntityType>
+  <EntityType Name="Siparis">
+    <Key>
+      <PropertyRef Name="SiparisId" />
+    </Key>
+    <Property Name="SiparisId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OgrenciId" Type="Int32" Nullable="false" />
+    <Property Name="EgitmenId" Type="Int32" Nullable="false" />
+    <Property Name="SiparisTarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="video_id" Type="Int32" />
+    <NavigationProperty Name="Egitmenler" Relationship="Self.FK_Siparis_Egitmenler" FromRole="Siparis" ToRole="Egitmenler" />
+    <NavigationProperty Name="Ogrenciler" Relationship="Self.FK_Siparis_Ogrenciler" FromRole="Siparis" ToRole="Ogrenciler" />
+    <NavigationProperty Name="Videolar" Relationship="Self.FK_Siparis_Videolar" FromRole="Siparis" ToRole="Videolar" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Videolar">
+    <Key>
+      <PropertyRef Name="vid_id" />
+    </Key>
+    <Property Name="vid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vid_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="vid_link" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kat_ad" Type="Int32" Nullable="false" />
+    <Property Name="vid_puan" Type="Int32" Nullable="false" />
+    <Property Name="egt_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Egitmenler" Relationship="Self.FK_Egitmenler_Videolar" FromRole="Videolar" ToRole="Egitmenler" />
+    <NavigationProperty Name="Egitmenler1" Relationship="Self.FK_Videolar_Egitmenler" FromRole="Videolar" ToRole="Egitmenler" />
+    <NavigationProperty Name="Kategoriler" Relationship="Self.FK_Videolar_Kategoriler" FromRole="Videolar" ToRole="Kategoriler" />
+    <NavigationProperty Name="Ogrenciler" Relationship="Self.FK_Ogrenciler_Videolar1" FromRole="Videolar" ToRole="Ogrenciler" />
+    <NavigationProperty Name="Puanlar" Relationship="Self.FK_Videolar_Puanlar" FromRole="Videolar" ToRole="Puanlar" />
+    <NavigationProperty Name="Sepet" Relationship="Self.FK_Sepet_Videolar" FromRole="Videolar" ToRole="Sepet" />
+    <NavigationProperty Name="Siparis" Relationship="Self.FK_Siparis_Videolar" FromRole="Videolar" ToRole="Siparis" />
+  </EntityType>
+  <Association Name="FK_Egitmenler_Puanlar">
+    <End Role="Puanlar" Type="Self.Puanlar" Multiplicity="0..1" />
+    <End Role="Egitmenler" Type="Self.Egitmenler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puanlar">
+        <PropertyRef Name="puan_id" />
+      </Principal>
+      <Dependent Role="Egitmenler">
+        <PropertyRef Name="egt_puan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Egitmenler_Videolar">
+    <End Role="Videolar" Type="Self.Videolar" Multiplicity="0..1" />
+    <End Role="Egitmenler" Type="Self.Egitmenler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Videolar">
+        <PropertyRef Name="vid_id" />
+      </Principal>
+      <Dependent Role="Egitmenler">
+        <PropertyRef Name="egt_video" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Siparis_Egitmenler">
+    <End Role="Egitmenler" Type="Self.Egitmenler" Multiplicity="1" />
+    <End Role="Siparis" Type="Self.Siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmenler">
+        <PropertyRef Name="egt_id" />
+      </Principal>
+      <Dependent Role="Siparis">
+        <PropertyRef Name="EgitmenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videolar_Egitmenler">
+    <End Role="Egitmenler" Type="Self.Egitmenler" Multiplicity="1" />
+    <End Role="Videolar" Type="Self.Videolar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmenler">
+        <PropertyRef Name="egt_id" />
+      </Principal>
+      <Dependent Role="Videolar">
+        <PropertyRef Name="egt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videolar_Kategoriler">
+    <End Role="Kategoriler" Type="Self.Kategoriler" Multiplicity="1" />
+    <End Role="Videolar" Type="Self.Videolar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriler">
+        <PropertyRef Name="kat_id" />
+      </Principal>
+      <Dependent Role="Videolar">
+        <PropertyRef Name="kat_ad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ogrenciler_Videolar1">
+    <End Role="Videolar" Type="Self.Videolar" Multiplicity="0..1" />
+    <End Role="Ogrenciler" Type="Self.Ogrenciler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Videolar">
+        <PropertyRef Name="vid_id" />
+      </Principal>
+      <Dependent Role="Ogrenciler">
+        <PropertyRef Name="ogr_video" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Siparis_Ogrenciler">
+    <End Role="Ogrenciler" Type="Self.Ogrenciler" Multiplicity="1" />
+    <End Role="Siparis" Type="Self.Siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenciler">
+        <PropertyRef Name="ogr_id" />
+      </Principal>
+      <Dependent Role="Siparis">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Videolar_Puanlar">
+    <End Role="Puanlar" Type="Self.Puanlar" Multiplicity="1" />
+    <End Role="Videolar" Type="Self.Videolar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puanlar">
+        <PropertyRef Name="puan_id" />
+      </Principal>
+      <Dependent Role="Videolar">
+        <PropertyRef Name="vid_puan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sepet_Videolar">
+    <End Role="Videolar" Type="Self.Videolar" Multiplicity="0..1" />
+    <End Role="Sepet" Type="Self.Sepet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Videolar">
+        <PropertyRef Name="vid_id" />
+      </Principal>
+      <Dependent Role="Sepet">
+        <PropertyRef Name="video_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Siparis_Videolar">
+    <End Role="Videolar" Type="Self.Videolar" Multiplicity="0..1" />
+    <End Role="Siparis" Type="Self.Siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Videolar">
+        <PropertyRef Name="vid_id" />
+      </Principal>
+      <Dependent Role="Siparis">
+        <PropertyRef Name="video_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineEgitimEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Egitmenler" EntityType="Self.Egitmenler" />
+    <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
+    <EntitySet Name="Ogrenciler" EntityType="Self.Ogrenciler" />
+    <EntitySet Name="Puanlar" EntityType="Self.Puanlar" />
+    <EntitySet Name="Sepet" EntityType="Self.Sepet" />
+    <EntitySet Name="Siparis" EntityType="Self.Siparis" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Videolar" EntityType="Self.Videolar" />
+    <AssociationSet Name="FK_Egitmenler_Puanlar" Association="Self.FK_Egitmenler_Puanlar">
+      <End Role="Puanlar" EntitySet="Puanlar" />
+      <End Role="Egitmenler" EntitySet="Egitmenler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Egitmenler_Videolar" Association="Self.FK_Egitmenler_Videolar">
+      <End Role="Videolar" EntitySet="Videolar" />
+      <End Role="Egitmenler" EntitySet="Egitmenler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Siparis_Egitmenler" Association="Self.FK_Siparis_Egitmenler">
+      <End Role="Egitmenler" EntitySet="Egitmenler" />
+      <End Role="Siparis" EntitySet="Siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videolar_Egitmenler" Association="Self.FK_Videolar_Egitmenler">
+      <End Role="Egitmenler" EntitySet="Egitmenler" />
+      <End Role="Videolar" EntitySet="Videolar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videolar_Kategoriler" Association="Self.FK_Videolar_Kategoriler">
+      <End Role="Kategoriler" EntitySet="Kategoriler" />
+      <End Role="Videolar" EntitySet="Videolar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ogrenciler_Videolar1" Association="Self.FK_Ogrenciler_Videolar1">
+      <End Role="Videolar" EntitySet="Videolar" />
+      <End Role="Ogrenciler" EntitySet="Ogrenciler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Siparis_Ogrenciler" Association="Self.FK_Siparis_Ogrenciler">
+      <End Role="Ogrenciler" EntitySet="Ogrenciler" />
+      <End Role="Siparis" EntitySet="Siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Videolar_Puanlar" Association="Self.FK_Videolar_Puanlar">
+      <End Role="Puanlar" EntitySet="Puanlar" />
+      <End Role="Videolar" EntitySet="Videolar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sepet_Videolar" Association="Self.FK_Sepet_Videolar">
+      <End Role="Videolar" EntitySet="Videolar" />
+      <End Role="Sepet" EntitySet="Sepet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Siparis_Videolar" Association="Self.FK_Siparis_Videolar">
+      <End Role="Videolar" EntitySet="Videolar" />
+      <End Role="Siparis" EntitySet="Siparis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

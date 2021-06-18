@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d7bf0bc2dd9b4ef8b07f17ca45b38e39" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineEgitimModel.Egitmenler" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Kategoriler" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Ogrenciler" Width="1.5" PointX="10.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Puanlar" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Sepet" Width="1.5" PointX="10.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Siparis" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Videolar" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Egitmenler_Puanlar" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Egitmenler_Videolar" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Siparis_Egitmenler" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Videolar_Egitmenler" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Videolar_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Ogrenciler_Videolar1" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Siparis_Ogrenciler" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Videolar_Puanlar" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Sepet_Videolar" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Siparis_Videolar" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

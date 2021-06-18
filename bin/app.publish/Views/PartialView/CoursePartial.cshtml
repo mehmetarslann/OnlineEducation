@@ -1,0 +1,44 @@
+﻿@model IEnumerable<OnlineEgitimProjesi.Models.Videolar>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Kurs Adı
+        </th>
+        <th>
+            Kurs Linki
+        </th>
+        <th>
+            Eğitmen Adı
+        </th>
+        <th>
+            Kategori Adı
+        </th>
+        <th>
+            Puan
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vid_ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vid_link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Egitmenler1.egt_ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategoriler.kat_ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puanlar.puan)
+        </td>
+    </tr>
+}
+
+</table>

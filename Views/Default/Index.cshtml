@@ -1,0 +1,216 @@
+﻿@model List<OnlineEgitimProjesi.Models.Kategoriler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<section class="slider_section">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <div class="container-fluid padding_dd">
+                    <div class="carousel-caption">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                                <div class="text-bg">
+                                    <h1>Favori Kursunuzu Burada Arayın</h1>
+                                    <p>EĞİTİMLİ PROFESYONELLERDEN ÜST DÜZEY DERSLER</p>
+                                    <a href="~/Course/Index">Kurslara Gözat</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                                <div class="images_box">
+                                    <figure><img src="~/Content/images/img2.png"></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+
+                <div class="container-fluid padding_dd">
+                    <div class="carousel-caption">
+
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                                <div class="text-bg">
+                                    <h1>Favori Kursunuzu Burada Arayın</h1>
+                                    <p>EĞİTİMLİ PROFESYONELLERDEN ÜST DÜZEY DERSLER</p>
+                                    <a href="#">Kurslara Gözat</a>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                                <div class="images_box">
+                                    <figure><img src="~/Content/images/img2.png"></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="carousel-item">
+
+                <div class="container-fluid padding_dd">
+                    <div class="carousel-caption ">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                                <div class="text-bg">
+                                    <h1>Favori Kursunuzu Burada Arayın</h1>
+                                    <p>EĞİTİMLİ PROFESYONELLERDEN ÜST DÜZEY DERSLER</p>
+                                    <a href="#">Kurslara Gözat</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                                <div class="images_box">
+                                    <figure><img src="~/Content/images/img2.png"></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    </div>
+
+</section>
+</div>
+</header>
+
+<!--Başlık-->
+<h2>Popüler Kategoriler</h2>
+<br />
+<hr />
+<!--Başlık End-->
+<!-- Kategoriler bölümü başlangıç -->
+
+<div class="card-deck">
+
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <a href="/Course/CourseDetails/@item.kat_id"><img src="@item.kat_resim" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+                <h5 class="card-title">@item.kat_ad</h5>
+                <p class="card-text">Alanında uzman kişilerden @item.kat_ad konusunda eğitim almak için detayları inceleyin</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">100+ Öğrenci Kayıtlı</small>
+            </div>
+        </div>
+        <hr />
+    }
+</div>
+
+
+
+
+<!-- Kategoriler bölümü bitiş -->
+<!-- our -->
+<div id="important" class="important">
+
+    <div class="important_bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="col col-xs-12">
+                    <div class="important_box">
+                        <h3>200+</h3>
+                        <span>Eğitmen</span>
+                    </div>
+                </div>
+                <div class="col col-xs-12">
+                    <div class="important_box">
+                        <h3>20+</h3>
+                        <span>Sınıf</span>
+                    </div>
+                </div>
+                <div class="col col-xs-12">
+                    <div class="important_box">
+                        <h3>50+</h3>
+                        <span>Kurs</span>
+                    </div>
+                </div>
+                <div class="col col-xs-12">
+                    <div class="important_box">
+                        <h3>200+</h3>
+                        <span>Üye</span>
+                    </div>
+                </div>
+                <div class="col col-xs-12">
+                    <div class="important_box">
+                        <h3>10+</h3>
+                        <span>Ülke</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- end our -->
+<!-- contact -->
+<div id="contact" class="contact">
+    <div class="container-fluid padding_left2">
+        <div class="white_color">
+            <div class="row">
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div id="map">
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                    <form class="contact_bg">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="titlepage">
+                                    <h2>İletişim <strong class="yellow"></strong></h2>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="contactus" placeholder="İsim" type="text" name="Your Name">
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="contactus" placeholder="Mail" type="text" name="Your Email">
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="contactus" placeholder="Telefon" type="text" name="Your Phone">
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea class="textarea" placeholder="Mesaj" type="text" name="Message"></textarea>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <button class="send">Gönder</button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- end contact -->

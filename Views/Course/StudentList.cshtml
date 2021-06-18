@@ -1,0 +1,50 @@
+﻿@model IEnumerable<OnlineEgitimProjesi.Models.Ogrenciler>
+
+@{
+    ViewBag.Title = "StudentList";
+    Layout = "~/Views/Shared/_EgitmenLayout.cshtml";
+}
+
+<h2>Öğrenci Listesi</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Öğrenci Adı
+        </th>
+        <th>
+            Öğrenci Soyadı
+        </th>
+        <th>
+            Öğrenci Eposta
+        </th>
+        <th>
+            Öğrenci Telefon
+        </th>
+        <th>
+            Öğrenci Video
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ogr_ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ogr_soyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ogr_eposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ogr_tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Videolar.vid_ad)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,75 @@
+﻿@model OnlineEgitimProjesi.Models.Egitmenler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Egitmenler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_soyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_soyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_eposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_eposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_sifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_sifre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puanlar.puan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puanlar.puan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Videolar.vid_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Videolar.vid_ad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.egt_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

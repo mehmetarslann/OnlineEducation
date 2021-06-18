@@ -1,0 +1,81 @@
+﻿@model OnlineEgitimProjesi.Models.Egitmenler
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Egitmenler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_soyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_soyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_eposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_eposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_sifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_sifre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egt_tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egt_tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puanlar.puan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puanlar.puan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Videolar.vid_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Videolar.vid_ad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,40 @@
+﻿@model List<OnlineEgitimProjesi.Models.Kategoriler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<hr />
+
+<!-- Kategoriler bölümü başlangıç -->
+
+<div class="card-deck">
+
+@foreach(var item in Model)
+            {
+    <div class="card">
+        <a href="/Course/CourseDetails/@item.kat_id"><img src="@item.kat_resim" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+            <h5 class="card-title">@item.kat_ad</h5>
+            <p class="card-text">Alanında uzman kişilerden @item.kat_ad konusunda eğitim almak için detayları inceleyin</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">100+ Öğrenci Kayıtlı</small>
+        </div>
+    </div>
+<hr />
+            }
+</div>
+
+
+
+
+<!-- Kategoriler bölümü bitiş -->
